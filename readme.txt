@@ -2,11 +2,10 @@
 Contributors: roytanck
 Tags: email, development, multisite, email, testing
 Requires at least: 5.2
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.6
 Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
 
 Redirect all email sent by WordPress to the admin's email address.
 

@@ -6,8 +6,7 @@
  * Requires at least: 5.2
  * Author:            Roy Tanck
  * Author URI:        https://roytanck.com/
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPL v3
  * Text Domain:       all-mail-to-admin
  * Domain Path:       /languages
  */
