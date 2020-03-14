@@ -43,5 +43,8 @@ Probably not. It is intended to be used during testing and for troubleshooting. 
 
 == Changelog ==
 
+= 1.1 (2020-03-14) =
+* Use the network admin email address when network-activated on multisite
+
 = 1.0 (2019-09-30) =
 * Initial release
