@@ -20,8 +20,21 @@ if( !function_exists('mail_caesar_redirect_email') ){
 
 	function mail_caesar_redirect_email( $args ){
 
-		// get the admin email address from the site's settings
-		$admin_email = sanitize_email( get_option('admin_email') );
+		if( is_multisite() ){
+			// Get a list of all network-activated plugins.
+			$network_plugins = get_site_option( 'active_sitewide_plugins', null );
+			// check if Mail Caesar is in the list.
+			if( array_key_exists( 'mail-caesar/mail-caesar.php', $network_plugins ) ){
+				// Get the network admin email address
+				$admin_email = sanitize_email( get_site_option( 'admin_email', null ) );
+			} else {
+				// get the admin email address from the site's settings
+				$admin_email = sanitize_email( get_option('admin_email') );
+			}
+		} else {
+			// get the admin email address from the site's settings
+			$admin_email = sanitize_email( get_option('admin_email') );
+		}
 
 		// check if the email address is valid
 		if( is_email( $admin_email ) && $args['to'] != $admin_email ){
