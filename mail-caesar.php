@@ -13,36 +13,40 @@
  */
 
 // check if called directly
-if( !defined( 'ABSPATH' ) ){ exit; }
+if( !defined( 'ABSPATH' ) ) { exit; }
 
 
-if( !function_exists('mail_caesar_redirect_email') ){
+if( !function_exists('mail_caesar_redirect_email') ) {
 
-	function mail_caesar_redirect_email( $args ){
+	function mail_caesar_redirect_email( $args ) {
 
-		if( is_multisite() ){
+		if( is_multisite() ) {
 			// Get a list of all network-activated plugins.
 			$network_plugins = get_site_option( 'active_sitewide_plugins', null );
 			// check if Mail Caesar is in the list.
-			if( array_key_exists( 'mail-caesar/mail-caesar.php', $network_plugins ) ){
+			if( array_key_exists( 'mail-caesar/mail-caesar.php', $network_plugins ) ) {
 				// Get the network admin email address
 				$admin_email = sanitize_email( get_site_option( 'admin_email', null ) );
 			} else {
-				// get the admin email address from the site's settings
+				// Get the admin email address from the site's settings.
 				$admin_email = sanitize_email( get_option('admin_email') );
 			}
 		} else {
-			// get the admin email address from the site's settings
+			// Get the admin email address from the site's settings.
 			$admin_email = sanitize_email( get_option('admin_email') );
 		}
 
 		// check if the email address is valid
 		if( is_email( $admin_email ) && $args['to'] != $admin_email ){
-			// replace the 'to' field, so the mail is delivered to the admin
+			// Create a string to add the the subject to show the original to address.
+			$org_to = is_array( $args['to'] ) ? implode( ', ', $args['to'] ) : $args['to'];
+			// Add the new string ot the subject.
+			$args['subject'] = $args['subject'] . ' (' . $org_to . ')';
+			// Replace the 'to' field, so the mail is delivered to the admin.
 			$args['to'] = $admin_email;
 		}
 
-		// 'wp_mail' is a filter hook, so we need to return the args array
+		// 'wp_mail' is a filter hook, so we need to return the args array.
 		return $args;
 	}
 
