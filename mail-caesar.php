@@ -2,6 +2,7 @@
 /**
  * Plugin Name:       Mail Caesar!
  * Description:       Send all email sent by WordPress to the site admin.
+ * Plugin URI:        https://roytanck.com/2019/10/04/new-wordpress-plugin-mail-caesar/
  * Version:           1.2
  * Requires at least: 5.2
  * Author:            Roy Tanck
