@@ -8,7 +8,7 @@
  * Author:            Roy Tanck
  * Author URI:        https://roytanck.com/
  * License:           GPL v3
- * Text Domain:       all-mail-to-admin
+ * Text Domain:       mail-caesar
  * Domain Path:       /languages
  */
 
