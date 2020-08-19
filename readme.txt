@@ -4,9 +4,8 @@ Tags: email, development, multisite, email, testing
 Requires at least: 5.2
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 1.2.1
+License: GPLv3
 
 Redirect all email sent by WordPress to the admin's email address.
 
@@ -42,6 +41,9 @@ The plugin uses a filter in WordPress's wp_mail() function. Any mail sent throug
 Probably not. It is intended to be used during testing and for troubleshooting. In most cases you'll want email to be sent to the users requesting them.
 
 == Changelog ==
+
+= 1.2.1 (2020-08-19) =
+* Minor bugfixes
 
 = 1.2 (2020-04-03) =
 * Added the original recipient's email address to the email's subject
