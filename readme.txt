@@ -2,7 +2,7 @@
 Contributors: roytanck
 Tags: email, development, multisite, email, testing
 Requires at least: 5.2
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
 Stable tag: 1.2.1
 License: GPLv3
